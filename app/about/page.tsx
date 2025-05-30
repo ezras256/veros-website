@@ -43,7 +43,7 @@ export default function AboutPage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Our Story</h2>
                 <p className="text-muted-foreground">
-                  Veros Marketing was founded in 2023 with a clear vision: to bridge the gap between cutting-edge AI
+                  Veros Marketing was founded in 2025 with a clear vision: to bridge the gap between cutting-edge AI
                   technology and practical marketing applications for businesses of all sizes.
                 </p>
                 <p className="text-muted-foreground">
