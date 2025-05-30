@@ -121,26 +121,11 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {[
               {
-                name: "Alex Morgan",
+                name: "Ezra Schultz",
                 role: "Founder & CEO",
-                bio: "Former tech executive with 15+ years of experience in AI and marketing.",
-              },
-              {
-                name: "Jamie Chen",
-                role: "Chief AI Officer",
-                bio: "PhD in Machine Learning with expertise in natural language processing and computer vision.",
-              },
-              {
-                name: "Taylor Williams",
-                role: "Head of Marketing",
-                bio: "Digital marketing strategist with a track record of scaling startups.",
-              },
-              {
-                name: "Jordan Smith",
-                role: "Client Success Manager",
-                bio: "Dedicated to ensuring clients achieve their marketing goals through our AI solutions.",
-              },
-            ].map((member, i) => (
+                bio: "(placeholder)",
+              }
+              ].map((member, i) => (
               <Card key={i} className="card-hover border-border/40">
                 <CardContent className="p-6 flex flex-col items-center text-center gap-4">
                   <div className="w-24 h-24 rounded-full bg-muted"></div>
