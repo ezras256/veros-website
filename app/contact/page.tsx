@@ -19,21 +19,46 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  e.preventDefault()
+  setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-
-    toast({
-      title: "Form submitted successfully!",
-      description: "We'll be in touch with you shortly.",
+  const formData = new FormData(e.currentTarget)
+  formData.append("access_key", "ce2770a5-c375-4a34-a97e-fe124a924a50") // replace this with your real access key
+  formData.append("from_name", "Veros Website Contact Form")
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
     })
 
-    setIsSubmitting(false)
-    // Reset form
-    e.currentTarget.reset()
+    const result = await response.json()
+
+    if (result.success) {
+      toast({
+        title: "Form submitted successfully!",
+        description: "We'll be in touch with you shortly.",
+      })
+      if (e?.currentTarget) {
+  e.currentTarget.reset()
+}
+    } else {
+      toast({
+        title: "Submission failed",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      })
+    }
+  } catch (error) {
+    toast({
+      title: "Network error",
+      description: "Check your connection and try again.",
+      variant: "destructive",
+    })
   }
+
+  setIsSubmitting(false)
+}
+
 
   return (
     <div className="flex flex-col min-h-screen">
